@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DB_RetroWaveDataSet" targetNamespace="http://tempuri.org/DB_RetroWaveDataSet.xsd" xmlns:mstns="http://tempuri.org/DB_RetroWaveDataSet.xsd" xmlns="http://tempuri.org/DB_RetroWaveDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_RetroWaveConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_RetroWaveConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RetroWave_Facturacion.Properties.Settings.GlobalReference.Default.DB_RetroWaveConnectionString" Provider="Microsoft.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaDetalleVentaConProductoTableAdapter" GeneratorDataComponentClassName="VistaDetalleVentaConProductoTableAdapter" Name="VistaDetalleVentaConProducto" UserDataComponentName="VistaDetalleVentaConProductoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_RetroWaveConnectionString (Settings)" DbObjectName="DB_RetroWave.dbo.VistaDetalleVentaConProducto" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdDetalle, IdVenta, IdProducto, NombreProducto, Talla, Color, Cantidad, PrecioUnitario, PrecioTotal FROM dbo.VistaDetalleVentaConProducto</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdDetalle" DataSetColumn="IdDetalle" />
+              <Mapping SourceColumn="IdVenta" DataSetColumn="IdVenta" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="NombreProducto" DataSetColumn="NombreProducto" />
+              <Mapping SourceColumn="Talla" DataSetColumn="Talla" />
+              <Mapping SourceColumn="Color" DataSetColumn="Color" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="PrecioUnitario" DataSetColumn="PrecioUnitario" />
+              <Mapping SourceColumn="PrecioTotal" DataSetColumn="PrecioTotal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DB_RetroWaveDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="DB_RetroWaveDataSet" msprop:Generator_DataSetName="DB_RetroWaveDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VistaDetalleVentaConProducto" msprop:Generator_RowEvHandlerName="VistaDetalleVentaConProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaDetalleVentaConProductoRowDeleted" msprop:Generator_RowDeletingName="VistaDetalleVentaConProductoRowDeleting" msprop:Generator_RowEvArgName="VistaDetalleVentaConProductoRowChangeEvent" msprop:Generator_TablePropName="VistaDetalleVentaConProducto" msprop:Generator_RowChangedName="VistaDetalleVentaConProductoRowChanged" msprop:Generator_RowChangingName="VistaDetalleVentaConProductoRowChanging" msprop:Generator_TableClassName="VistaDetalleVentaConProductoDataTable" msprop:Generator_RowClassName="VistaDetalleVentaConProductoRow" msprop:Generator_TableVarName="tableVistaDetalleVentaConProducto" msprop:Generator_UserTableName="VistaDetalleVentaConProducto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdDetalle" msprop:Generator_ColumnPropNameInRow="IdDetalle" msprop:Generator_ColumnPropNameInTable="IdDetalleColumn" msprop:Generator_ColumnVarNameInTable="columnIdDetalle" msprop:Generator_UserColumnName="IdDetalle" type="xs:int" />
+              <xs:element name="IdVenta" msprop:Generator_ColumnPropNameInRow="IdVenta" msprop:Generator_ColumnPropNameInTable="IdVentaColumn" msprop:Generator_ColumnVarNameInTable="columnIdVenta" msprop:Generator_UserColumnName="IdVenta" type="xs:int" />
+              <xs:element name="IdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="NombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_UserColumnName="NombreProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Talla" msprop:Generator_ColumnPropNameInRow="Talla" msprop:Generator_ColumnPropNameInTable="TallaColumn" msprop:Generator_ColumnVarNameInTable="columnTalla" msprop:Generator_UserColumnName="Talla">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Color" msprop:Generator_ColumnPropNameInRow="Color" msprop:Generator_ColumnPropNameInTable="ColorColumn" msprop:Generator_ColumnVarNameInTable="columnColor" msprop:Generator_UserColumnName="Color" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_UserColumnName="Cantidad" type="xs:int" />
+              <xs:element name="PrecioUnitario" msprop:Generator_ColumnPropNameInRow="PrecioUnitario" msprop:Generator_ColumnPropNameInTable="PrecioUnitarioColumn" msprop:Generator_ColumnVarNameInTable="columnPrecioUnitario" msprop:Generator_UserColumnName="PrecioUnitario" type="xs:decimal" />
+              <xs:element name="PrecioTotal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="PrecioTotal" msprop:Generator_ColumnPropNameInTable="PrecioTotalColumn" msprop:Generator_ColumnVarNameInTable="columnPrecioTotal" msprop:Generator_UserColumnName="PrecioTotal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaDetalleVentaConProducto" />
+      <xs:field xpath="mstns:IdDetalle" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
