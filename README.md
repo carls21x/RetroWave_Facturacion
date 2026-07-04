@@ -1,89 +1,115 @@
-# RetroWave_Facturacion
+#  RetroWave_Facturacion
 
-Compact invoicing application targeting .NET Framework 4.7.2.
+> **⚠️ Aviso de Confidencialidad:** Este repositorio contiene código fuente propietario y de uso restringido. Queda estrictamente prohibida su distribución, copia, modificación o uso no autorizado. 
 
-## Overview
+##  Descripción General
 
-RetroWave_Facturacion is a .NET Framework 4.7.2 application for generating and managing invoices (facturación). This repository contains the solution, source code, and supporting files required to build and run the application in Visual Studio 2022.
-
-## Key highlights
-
-- Target framework: `.NET Framework 4.7.2`
-- Recommended IDE: `Visual Studio 2022`
-- Package management: `NuGet`
-- Configuration files: `App.config` / `Web.config` (depending on project type)
-- Coding standards: `.editorconfig` and `CONTRIBUTING.md` (project rules must be followed)
-
-## Prerequisites
-
-- Windows 10/11 or compatible
-- `Visual Studio 2022` with `.NET desktop development` and/or `ASP.NET and web development` workloads installed
-- `.NET Framework 4.7.2 Developer Pack` (if not included with VS)
-- `SQL Server` (Express / LocalDB / Full) or another database engine supported by the project
-- Internet connection to restore NuGet packages
-
-## Quick start
-
-1. Clone the repository:
-   - `git clone https://github.com/carls21x/RetroWave_Facturacion.git`
-
-2. Open the solution:
-   - Open `RetroWave_Facturacion.sln` in `Visual Studio 2022`.
-
-3. Restore NuGet packages:
-   - Visual Studio will typically restore automatically. If not, right-click the solution and choose `Restore NuGet Packages`.
-
-4. Configure the database connection:
-   - Edit the appropriate configuration file (`App.config` or `Web.config`) and set your connection string. Example placeholder:
-
-     ```xml
-     <connectionStrings>
-       <add name="DefaultConnection" connectionString="Server=.\SQLEXPRESS;Database=RetroWaveDB;Trusted_Connection=True;" providerName="System.Data.SqlClient" />
-     </connectionStrings>
-     ```
-
-   - Replace the connection string values with your server, database name, credentials, and provider as required.
-
-5. Build and run:
-   - Select the startup project, build the solution (`Build > Build Solution`), then run (`Debug > Start Debugging` or `Ctrl+F5`).
-
-## Database
-
-- If the project uses migrations or an ORM (Entity Framework, Dapper, etc.), follow the repository-specific migration steps:
-  - For Entity Framework Code First with migrations: use the `Package Manager Console`:
-    - `Update-Database -ProjectName <ProjectContainingMigrations> -StartupProjectName <StartupProject>`
-  - If there are SQL scripts, run them against your database to create the schema and seed data.
-
-## Tests
-
-- Unit tests (if present) can be run using `Test Explorer` in Visual Studio.
-- From command line (if supported): use `vstest.console.exe` or an appropriate test runner.
-
-## Configuration & Secrets
-
-- Do not commit production credentials or secrets.
-- Use environment variables, user secrets (for development), or secure configuration stores for sensitive values.
-- Keep configuration changes documented in `CONTRIBUTING.md` if required by the project.
-
-## Contributing
-
-- Follow the repository's `CONTRIBUTING.md` and `.editorconfig` for code style and commit conventions.
-- Create feature branches from `master`, add tests for changes, and open pull requests for review.
-
-## Troubleshooting
-
-- NuGet package restore fails: ensure NuGet feed access and clear the local package cache (`nuget locals all -clear`).
-- Build errors referencing missing targets or SDKs: ensure `.NET Framework 4.7.2 Developer Pack` and required Visual Studio workloads are installed.
-- Database connection issues: verify the connection string, database server accessibility, and that the database exists.
-
-## License & Notices
-
-- Check repository root for a `LICENSE` file. If none exists, contact the project owner to confirm licensing terms before reusing code.
-
-## Contact / Support
-
-- For repository-specific questions, open an issue on GitHub or contact the repository owner.
+**RetroWave_Facturacion** es una aplicación compacta diseñada para la generación y gestión de facturación, construida sobre `.NET Framework 4.7.2`. Este repositorio contiene la solución completa, el código fuente y los archivos de soporte necesarios para compilar y ejecutar la aplicación de forma local utilizando Visual Studio 2022.
 
 ---
 
-If you want, I can generate a Spanish version of this README or adapt it to include specific details from your solution (project names, connection strings, migration commands). What would you prefer?
+##  Tecnologías y Entorno
+
+* **Framework:** `.NET Framework 4.7.2`
+* **Entorno de Desarrollo (IDE):** `Visual Studio 2022`
+* **Base de Datos:** `SQL Server` (Express / LocalDB / Full)
+* **Gestor de Paquetes:** `NuGet`
+* **Configuración:** `App.config` / `Web.config`
+* **Estándares de Código:** Gestionados mediante `.editorconfig`.
+
+---
+
+##  Requisitos Previos
+
+Para desplegar este proyecto en un entorno local, tu equipo debe cumplir con los siguientes requisitos:
+
+* **Sistema Operativo:** Windows 10/11 (o compatible).
+* **Visual Studio 2022** con las cargas de trabajo de *Desarrollo de escritorio de .NET* y/o *Desarrollo de ASP.NET y web* instaladas.
+* **.NET Framework 4.7.2 Developer Pack** (en caso de no venir incluido con tu instalación de VS).
+* **Motor de Base de Datos:** SQL Server configurado y en ejecución.
+* Conexión a internet activa para la restauración de paquetes de dependencias.
+
+---
+
+##  Pasos de Instalación y Ejecución
+
+Sigue estos pasos para compilar la aplicación en tu entorno de desarrollo. Solo el personal autorizado debe ejecutar este flujo.
+
+**1. Clonar el repositorio:**
+```bash
+git clone [https://github.com/carls21x/RetroWave_Facturacion.git](https://github.com/carls21x/RetroWave_Facturacion.git)
+
+```
+
+**2. Abrir la solución:**
+Navega a la carpeta clonada y abre el archivo `RetroWave_Facturacion.sln` en Visual Studio 2022.
+
+**3. Restaurar paquetes NuGet:**
+Por lo general, Visual Studio restaurará los paquetes automáticamente al abrir el proyecto. Si no ocurre, haz clic derecho sobre la solución en el *Explorador de soluciones* y selecciona **Restaurar paquetes NuGet**.
+
+**4. Configurar la conexión a la Base de Datos:**
+Abre el archivo de configuración correspondiente (`App.config` o `Web.config`) y ajusta tu cadena de conexión (`connectionString`). Reemplaza los valores con los de tu servidor local.
+
+*Ejemplo de estructura esperada:*
+
+```xml
+<connectionStrings>
+  <add name="DefaultConnection" 
+       connectionString="Server=.\SQLEXPRESS;Database=RetroWaveDB;Trusted_Connection=True;" 
+       providerName="System.Data.SqlClient" />
+</connectionStrings>
+
+```
+
+**5. Compilar y Ejecutar:**
+
+* Selecciona el proyecto de inicio.
+* Compila la solución desde el menú: **Compilar > Compilar solución** (`Ctrl+Shift+B`).
+* Ejecuta la aplicación: **Depurar > Iniciar depuración** (`F5`) o **Iniciar sin depurar** (`Ctrl+F5`).
+
+---
+
+##  Gestión de Base de Datos
+
+Si el proyecto utiliza un ORM (como Entity Framework o Dapper), asegúrate de aplicar las migraciones antes de iniciar la aplicación por primera vez:
+
+* **Para Entity Framework Code First:** Abre la *Consola del Administrador de paquetes* (Package Manager Console) y ejecuta:
+```powershell
+Update-Database -ProjectName <NombreDelProyectoDeMigraciones> -StartupProjectName <ProyectoDeInicio>
+
+```
+
+
+* **Scripts Manuales:** Si el proyecto incluye scripts `.sql`, ejecútalos directamente en tu instancia de SQL Server para crear los esquemas y datos semilla.
+
+---
+
+##  Seguridad y Credenciales
+
+* **Entornos de Producción:** Bajo ninguna circunstancia se deben hacer *commit* de contraseñas, tokens o cadenas de conexión de producción en este repositorio.
+* **Desarrollo Local:** Utiliza variables de entorno o *User Secrets* para manejar valores sensibles durante el desarrollo.
+
+---
+
+##  Solución de Problemas (Troubleshooting)
+
+* **Fallo al restaurar paquetes NuGet:** Verifica tu conexión a internet o limpia la caché local de paquetes ejecutando `nuget locals all -clear` en tu terminal.
+* **Errores de SDK o Framework faltante:** Asegúrate de haber instalado el *Developer Pack de .NET 4.7.2* a través del Visual Studio Installer.
+* **Error de conexión a la Base de Datos:** Verifica que el servicio de SQL Server esté corriendo y que el nombre del servidor en tu `App.config` sea el correcto (ej. `.\SQLEXPRESS`).
+
+---
+
+##  Licencia y Derechos
+
+**© 2026. Todos los derechos reservados.**
+Este software es de uso privativo. El acceso a este código no otorga permisos de distribución, modificación ni explotación comercial sin el consentimiento expreso y por escrito del autor y propietario del proyecto.
+
+---
+
+##  Soporte y Contacto
+
+Para consultas sobre la arquitectura, reporte de fallos o problemas con los accesos al repositorio, por favor abre un *Issue* en GitHub (si tienes los permisos) o contacta directamente con el administrador del proyecto (carls21x).
+
+```
+
+```
